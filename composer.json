@@ -26,9 +26,21 @@
         "doctrine/dbal" : "^2.6@dev",
         "nordic/email-address" : "^1.0@dev"
     },
+    "require-dev": {
+        "phpunit/phpunit" : ">=7.0",
+        "mockery/mockery": "^1.2"
+    },
     "autoload": {
         "psr-4": {
             "Nordic\\EmailAddress\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NordicTest\\EmailAddress\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
