@@ -7,6 +7,7 @@ use Doctrine\DBAL\Types\ConversionException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Nordic\EmailAddress\EmailAddress;
 use Nordic\EmailAddress\EmailAddressInterface;
+use Nordic\EmailAddress\InvalidEmailAddressException;
 use Nordic\EmailAddress\NullEmailAddress;
 
 /**
@@ -46,8 +47,6 @@ class EmailAddressType extends StringType
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Nordic\EmailAddress\InvalidEmailAddressException
      */
     public function convertToPHPValue($value, AbstractPlatform $platform): ?EmailAddressInterface
     {
@@ -59,6 +58,10 @@ class EmailAddressType extends StringType
             return $value;
         }
 
-        return new EmailAddress($value);
+        try {
+            return new EmailAddress($value);
+        } catch (InvalidEmailAddressException $e) {
+            throw ConversionException::conversionFailed($value, $this->getName());
+        }
     }
 }
