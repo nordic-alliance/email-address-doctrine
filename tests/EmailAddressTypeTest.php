@@ -7,6 +7,7 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 use Nordic\EmailAddress\EmailAddressInterface;
 use Nordic\EmailAddress\EmailAddress;
+use Nordic\EmailAddress\NullEmailAddress;
 use Nordic\EmailAddress\Doctrine\EmailAddressType;
 use Nordic\EmailAddress\EmailAddressFactory;
 use PHPUnit\Framework\TestCase;
@@ -102,6 +103,14 @@ final class EmailAddressTypeTest extends TestCase
 
         $this->assertInstanceOf(EmailAddress::class, $emailAddress);
         $this->assertEquals(self::VALID_EMAIL, (string) $emailAddress);
+    }
+
+    public function testNullEmailAddressConvertsToPHPValue()
+    {
+        $emailAddress = $this->type->convertToPHPValue(null, $this->platform);
+
+        $this->assertInstanceOf(NullEmailAddress::class, $emailAddress);
+        $this->assertEquals('', (string) $emailAddress);
     }
 
     /**
