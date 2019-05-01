@@ -23,6 +23,7 @@
     "minimum-stability": "stable",
     "require": {
         "php" : "~7.1",
+        "doctrine/dbal" : "^2.6@dev",
         "nordic/email-address" : "^1.0@dev"
     },
     "autoload": {
