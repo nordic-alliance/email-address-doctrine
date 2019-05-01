@@ -1,0 +1,33 @@
+{
+    "name": "nordic/email-address-doctrine",
+    "description": "Doctrine email address type.",
+    "keywords": [
+        "nordic",
+        "email",
+        "email address",
+        "value object",
+        "doctrine"
+    ],
+    "support": {
+        "issues": "https://github.com/nordic-alliance/email-address-doctrine/issues"
+    },
+    "homepage": "https://github.com/nordic-alliance/email-address-doctrine",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Serhii Diahovchenko",
+            "email": "sergey.dyagovchenko@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php" : "~7.1",
+        "nordic/email-address" : "^1.0@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nordic\\EmailAddress\\": "src"
+        }
+    }
+}
