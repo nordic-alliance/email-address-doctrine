@@ -59,7 +59,7 @@ class EmailAddressType extends StringType
         }
 
         try {
-            return new EmailAddress($value);
+            return new EmailAddress((string) $value);
         } catch (InvalidEmailAddressException $e) {
             throw ConversionException::conversionFailed($value, $this->getName());
         }
