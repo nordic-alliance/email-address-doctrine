@@ -43,7 +43,7 @@ final class EmailAddressTypeTest extends TestCase
 
     public function testGetName()
     {
-        $this->assertEquals('email_address', $this->type->getName());
+        $this->assertEquals(EmailAddressType::EMAIL_ADDRESS, $this->type->getName());
     }
 
     public function testEmailAddressConvertsToDatabaseValue()
@@ -119,6 +119,14 @@ final class EmailAddressTypeTest extends TestCase
     public function testInvalidEmailAddressConvertsToPHPValue()
     {
         $this->type->convertToPHPValue(self::INVALID_EMAIL, $this->platform);
+    }
+
+    /**
+     * @expectedException Doctrine\DBAL\Types\ConversionException
+     */
+    public function testInvalidValueConvertsToPHPValue()
+    {
+        $this->type->convertToPHPValue(12345, $this->platform);
     }
 
     /**
