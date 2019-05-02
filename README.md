@@ -69,7 +69,7 @@ class Contact
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 [ico-php-version]: https://img.shields.io/travis/php-v/nordic-alliance/email-address-doctrine.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-license]: https://img.shields.io/github/license/nordic-alliance/email-address-doctrine.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/nordic-alliance/email-address-doctrine/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/nordic-alliance/email-address-doctrine.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/nordic-alliance/email-address-doctrine.svg?style=flat-square
